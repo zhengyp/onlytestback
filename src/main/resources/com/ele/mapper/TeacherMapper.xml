@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.ele.dao.TeacherDao">
+<!--    注册-->
+    <insert id="save" parameterType="Teacher">
+        insert into zhengyp.ele_teacher values(#{id},#{name},#{phone},#{loginName},#{password})
+    </insert>
+
+<!--    登录-->
+    <select id="login" resultType="Teacher">
+        select id,name,phone,login_name,password
+        from zhengyp.ele_teacher
+        where login_name = #{loginName} and password = #{password}
+    </select>
+
+</mapper>
